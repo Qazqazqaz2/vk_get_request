@@ -13,8 +13,10 @@ def str_to_sort_list(event):
     token = token.split('access_token=')[-1]
     token = token.split('&')[0]
     try:
-        text = ent_1.get()
-    except:
+        text = ent_1.get(1.0,END)
+        print(text)
+    except Exception as e:
+        print(e)
         text = 'Hi'
     main.main(token, text)
 
